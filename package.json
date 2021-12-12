@@ -1,0 +1,40 @@
+{
+  "name": "contentful-bootstrap",
+  "version": "0.0.1",
+  "description": "Quickly bootstrap Contentful spaces with content types, content, assets, and more!",
+  "main": "./dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "test": "ts-mocha tests/**/*.test.ts",
+    "coverage": "nyc npm test",
+    "lint": "eslint ."
+  },
+  "files": [
+    "dist",
+    "LICENSE",
+    "README.md"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/connorff/contentful-bootstrap.git"
+  },
+  "keywords": [],
+  "author": "Connor Fogarty <connorflynnfogarty@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/connorff/contentful-bootstrap/issues"
+  },
+  "homepage": "https://github.com/connorff/contentful-bootstrap#readme",
+  "devDependencies": {
+    "@types/chai": "^4.2.14",
+    "@types/mocha": "^8.2.0",
+    "@typescript-eslint/eslint-plugin": "^5.6.0",
+    "@typescript-eslint/parser": "^5.6.0",
+    "chai": "^4.2.0",
+    "eslint": "^7.17.0",
+    "mocha": "^9.1.3",
+    "nyc": "^15.1.0",
+    "ts-mocha": "^8.0.0",
+    "typescript": "^4.1.3"
+  }
+}
