@@ -4,15 +4,15 @@ on: [push, pull_request]
 jobs:
   lint:
     runs-on: ubunti-latest
-    uses: actions/checkout@v2
     steps:
+      - uses: actions/checkout@v2
       - run: npm ci
       - run: npm run lint
 
   test:
     runs-on: ubunti-latest
-    uses: actions/checkout@v2
     steps:
+      - uses: actions/checkout@v2
       - run: npm ci
       - run: npm run build
       - run: npm t
