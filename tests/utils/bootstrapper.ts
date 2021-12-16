@@ -1,10 +1,10 @@
-import { ClientAPI } from 'contentful-management';
+import { Environment } from 'contentful-management';
 import ContentfulBootstrap from '../../src/index';
 
-export const createBootstrapper = (client?: ClientAPI): ContentfulBootstrap => {
-  if (!client) {
-    return new ContentfulBootstrap({} as unknown as ClientAPI);
+export const createBootstrapper = (env?: Environment): ContentfulBootstrap => {
+  if (!env) {
+    return new ContentfulBootstrap({} as unknown as Environment);
   }
 
-  return new ContentfulBootstrap(client);
+  return new ContentfulBootstrap(env);
 };

@@ -1,9 +1,9 @@
-import { ClientAPI, ContentType } from 'contentful-management';
+import { Environment, ContentType } from 'contentful-management';
 import { ContentTypeMap } from './contentTypes/types';
 import { getDuplicateTypeMessage } from './contentTypes/utils';
 
 export default class ContentfulBootstrap {
-  private driver: ClientAPI;
+  private environment: Environment;
 
   private contentTypes: ContentTypeMap = {};
 
@@ -12,8 +12,8 @@ export default class ContentfulBootstrap {
    * @param driver The `contentful-management` client used to populate content types,
    * content, assets, etc.
    */
-  constructor(driver: ClientAPI) {
-    this.driver = driver;
+  constructor(environment: Environment) {
+    this.environment = environment;
   }
 
   /**
@@ -33,5 +33,14 @@ export default class ContentfulBootstrap {
     }
 
     this.contentTypes[contentTypeKey] = type;
+  }
+
+  /**
+   * Upload content types.
+   */
+  async bootstrap() {
+    await Promise.all(
+      Object.values(this.contentTypes).map(this.environment.createContentType),
+    );
   }
 }
